@@ -27,4 +27,14 @@ Bash script to run a GWAS using GLM in TASSEL pipeline using the tutorial data.
 
 hapmap_to_structuretxt
 
-R script written by rossibarra to transpose SNP hapmap table.  Use before dup_snp_for_struct.py.  
+R script written by rossibarra to transpose SNP hapmap table.  Use before dup_snp_for_struct.py.
+
+
+basic_struct.sh
+
+Basic slurm script to use structure to infer population structure from SNP data using pre-installed module on cluster.  Runs as a single job using parameters supplied by mainparams and extraparams files.  
+
+
+sort_hapmap_chr_pos.sh
+
+Bash script written by rossibarra to sort a hapmap file with randomly selected scripts by both chromosome and position.  This sorting is required to use the hapmap file in TASSEL.    
