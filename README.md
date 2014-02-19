@@ -38,3 +38,8 @@ Basic slurm script to use structure to infer population structure from SNP data 
 sort_hapmap_chr_pos.sh
 
 Bash script written by rossibarra to sort a hapmap file with randomly selected scripts by both chromosome and position.  This sorting is required to use the hapmap file in TASSEL.    
+
+
+q_matrix.sh 
+
+Bash script that formats a Q matrix from structure for use in TASSEL.  Prompts users for number of populations (K) and adds the appropriate heading to the file.  
