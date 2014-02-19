@@ -1,15 +1,14 @@
-# Format Hapmap v. 2
+# Format Hapmap
 # Chris Fiscus
 # 2/13/14
 # A script that sorts a hapmap file by chromosome and prints each chromosome into a separate file 
 
 # Before running this script, you need to change extension of .hapmap file to .txt
 
-# To do: still need to sort numbers in column 4 
 
 def main():
 
-    file = open("SNP_rand_10k.txt", "r") # open hapmap file to be reformatted (change file in " ")
+    file = open("SNP_rand_10k.txt", "r") # open hapmap file to be processed (change file in " ")
 
     x1 = [] # chromosome 1 
     x2 = [] # chromosome 2
@@ -21,19 +20,19 @@ def main():
     x8 = []
     x9 = []
     x10 = []
-    xp = [] # final list for merge/ print
+    xp = [] # header of input file 
 
     
     for line in file: # do this for every line in the file
 
         y = line
 
-        check = y.split()
+        check = y.split() # split line at spaces
 
         if check[2] == "chr1":   # sort lines by chromosome 
-            x1.append(str(line))
+            x1.append(str(line)) # write line to list 
 
-        elif check[2] == "chr2":
+        elif check[2] == "chr2": # etc. 
             x2.append(str(line))
 
         elif check[2] == "chr3":
@@ -65,16 +64,16 @@ def main():
 
     file.close() # close input file
 
-    out = open("header.txt","w")
-    out.write(''.join(xp))
-    out.close
+    out = open("header.txt","w") # open file to be written (for file header)
+    out.write(''.join(xp)) # write the contents of list to new file
+    out.close # close out file 
 
     out = open("chr1.txt", "w") # open file to be written (change file in " ")
     out.write(''.join(x1)) # write the list to new file
     x1[:] = [] # empty list
-    out.close # close temp file
+    out.close # close out file
 
-    out = open("chr2.txt", "w")
+    out = open("chr2.txt", "w") # etc. 
     out.write(''.join(x2))
     x2[:] = []
     out.close
