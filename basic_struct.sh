@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -D /home/cjfiscus/projects/structure/ # running directory
-#SBATCH -o /home/cjfiscus/projects/structure/slurm-log/10krandSNPs-%j.txt
-#SBATCH -e /home/cjfiscus/projects/structure/slurm-log/10krandSNPs-%j.txt
+#SBATCH -o /home/cjfiscus/projects/structure/slurm-log/10krandSNPs-stdout-%j.txt
+#SBATCH -e /home/cjfiscus/projects/structure/slurm-log/10krandSNPs-stderr-%j.txt
 #SBATCH -J randSNPs
 set -e
 set -u
