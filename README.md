@@ -43,3 +43,24 @@ Bash script written by rossibarra to sort a hapmap file with randomly selected s
 q_matrix.sh 
 
 Bash script that formats a Q matrix from structure for use in TASSEL.  Prompts users for number of populations (K) and adds the appropriate heading to the file.  
+
+
+format_tassel_to_r_graph.py
+
+Python 3 script that takes GWAS (GLM or MLM) output from TASSEL and formats it for graphing with R.  Output is file with columns SNP, CHR, BP, P. 
+
+
+slurm_mlm.sh
+
+Slurm script to run GWAS using MLM in TASSEL. 
+
+
+
+tassel_load_results.sh
+
+Bash script to import table results into TASSEL. 
+
+
+slurm_glm.sh
+
+Slurm script to run GWAS using GLM in TASSEL.  
