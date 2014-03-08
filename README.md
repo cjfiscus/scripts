@@ -20,6 +20,21 @@ dup_snp_for_struct.py
 Python 3 script written duplicate SNP data after it has been transposed.  This is to fulfill data format requirements for structure.  Use after file has been processed with hapmap_to_structuretxt
 -----
 
+export_selected_regions.py
+
+Python 3 script to take a .txt file with SNPs (either a single chromosome or absolute position in genome) and export SNP data for SNPs in a designated genomic region. 
+-----
+
+export_snp_names_for_multiple_regions.py
+
+Python 3 script to export SNP names from MULTIPLE given positions in the genome using specially formatted input file.  Similar to export_selected_regions.py. See script for details.
+-----
+
+export_SNP_names.py
+
+Functionally equivalent to export_selected_regions.py but only exports the SNP name (for highlighting in R). 
+------
+
 format_tassel_to_r_graph.py
 
 Python 3 script that takes GWAS (GLM or MLM) output from TASSEL and formats it for graphing with R.  Output is file with columns SNP, CHR, BP, P. 
