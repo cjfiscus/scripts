@@ -25,15 +25,22 @@ export_selected_regions.py
 Python 3 script to take a .txt file with SNPs (either a single chromosome or absolute position in genome) and export SNP data for SNPs in a designated genomic region. 
 -----
 
-export_snp_names_for_multiple_regions.py
+export_snp_names_for_multiple_regions(_v2).py
 
 Python 3 script to export SNP names from MULTIPLE given positions in the genome using specially formatted input file.  Similar to export_selected_regions.py. See script for details.
+
+VERSION 2 adds ability to specify boundaries to add to given bounds (ie +-5000 bp)
 -----
 
 export_SNP_names.py
 
 Functionally equivalent to export_selected_regions.py but only exports the SNP name (for highlighting in R). 
-------
+-----
+
+find_sig_snps.py
+
+Python 3 script to export SNP data from GWAS results based on a supplied P value threshold.
+-----  
 
 format_tassel_to_r_graph.py
 
@@ -47,7 +54,7 @@ R script written by rossibarra to transpose SNP hapmap table.  Use before dup_sn
 
 pdf_to_jpeg.app
 
-Automator application to convert pdf files to jpeg image files.  Used to process graphs created by R and saved as large pdfs.  
+Automator application to convert pdf files to jpeg image files.  Used to process graphs created by R and saved as large pdfs. Must be run on Macintosh OS.   
 -----
 
 q_matrix.sh 
