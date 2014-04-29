@@ -15,6 +15,11 @@ combine.sh
 Experimental script used to attempt to develop a way of editing K value in mainparams file for structure input on cluster.  Requires that mainparams file is split before line to be processed.  Script is successful but does not work well on cluster due to the speed at which mainparams is accessed for each task in array.  Problem solved by 10k_structarray_10.sh (above). 
 -----
 
+con_to_fasta.sh
+
+Slurm script to use samtools to convert a .bam file to a .fasta file in a different directory.  
+-----
+
 dup_snp_for_struct.py
 
 Python 3 script written duplicate SNP data after it has been transposed.  This is to fulfill data format requirements for structure.  Use after file has been processed with hapmap_to_structuretxt
