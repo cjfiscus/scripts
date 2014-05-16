@@ -4,7 +4,10 @@
 #SBATCH -o /home/cjfiscus/projects/tassel/slurm-log/mlm-stdout-%j.txt
 #SBATCH -e /home/cjfiscus/projects/tassel/slurm-log/mlm-stderr-%j.txt
 #SBATCH -J mlm
-#SBATCH --ntasks=2 # allocate 16 GB ram
+#SBATCH --ntasks=2 # allocate 16 GB ram/ 2 compute nodes
+#SBATCH--mail-user=cjfiscus@ucdavis.edu
+#SBATCH--mail-type=END # emails when done
+#SBATCH--mail-type=FAIL # emails if fails
 set -e
 set -u
 
