@@ -11,14 +11,15 @@
 set -e
 set -u
 
-# This script uses TASSEL to determine kinship based on hapmap file
+# This script uses TASSEL to run a GWAS using GLM
 # Hapmap file must be in format FILENAME.hmp.txt for this to work
 # SNPs in Hapmap file must be in order
+# Must include phenotype (.txt) and Q matrix (.txt) 
 # Runs on bigmem
 
 module load tassel/4.3.0
 
-run_pipeline.pl -Xmx16g -fork1 -h ./SNP_all_lines.hmp.txt -fork2 -importGuess ./phenotype.txt -fork3 -importGuess ./qmatrix_12.txt -combine4 -input1 -input2 -input3 -intersect -glm -glmOutputFile ./glm_12 -runfork1 -runfork2 -runfork3
+run_pipeline.pl -Xmx16g -fork1 -h ./SNP_all_lines.hmp.txt -fork2 -importGuess ./phenotype.txt -fork3 -importGuess ./qmatrix_3.txt -combine4 -input1 -input2 -input3 -intersect -glm -glmOutputFile ./glm_3 -runfork1 -runfork2 -runfork3
 
 
 # Runs TASSEL pipeline with a minimum of 512 MB RAM and a maximum of 16 GB RAM (2 compute node on bigmem)

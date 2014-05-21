@@ -1,19 +1,20 @@
 #!/bin/bash
 
 #SBATCH -D /home/cjfiscus/projects/tassel/ # running directory
-#SBATCH -o /home/cjfiscus/projects/tassel/slurm-log/mlm-stdout-%j.txt
-#SBATCH -e /home/cjfiscus/projects/tassel/slurm-log/mlm-stderr-%j.txt
-#SBATCH -J mlm
+#SBATCH -o /home/cjfiscus/projects/tassel/slurm-log/mlm-stdout-%j.txt # standard out
+#SBATCH -e /home/cjfiscus/projects/tassel/slurm-log/mlm-stderr-%j.txt # standard error
+#SBATCH -J mlm # job name
 #SBATCH --ntasks=2 # allocate 16 GB ram/ 2 compute nodes
-#SBATCH--mail-user=cjfiscus@ucdavis.edu
+#SBATCH--mail-user=cjfiscus@ucdavis.edu # insert email here!
 #SBATCH--mail-type=END # emails when done
 #SBATCH--mail-type=FAIL # emails if fails
 set -e
 set -u
 
-# This script uses TASSEL to determine kinship based on hapmap file
+# This script uses TASSEL to run a GWAS using MLM model
 # Hapmap file must be in format FILENAME.hmp.txt for this to work
 # SNPs in Hapmap file must be in order
+# Must also include phenotype (.txt) and q matrix (.txt)
 # Runs on bigmem
 
 module load tassel/4.3.0
@@ -22,4 +23,4 @@ run_pipeline.pl -Xmx16g -fork1 -k kinship.txt -fork2 -importGuess phenotype.txt 
 
 # Runs TASSEL pipeline with a minimum of 512 MB RAM and a maximum of 16 GB RAM (2 compute nodes on bigmem)
 # imports file SNP… as hapmap (-h)
-# outputs results to the same directory under the name “kinship”
+# outputs results to the same directory under the name “mlm_output_12*” 
