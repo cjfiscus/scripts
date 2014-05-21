@@ -2,7 +2,7 @@ scripts
 =======
 10k_structarray_10.sh
 
-Slurm script to use structure to infer population structure from SNP data using pre-installed module on cluster.  Runs as an array job for 1- max K.  Dependent on mainparams and extraparams files included with structure console.  K value in mainparams will be overwritted by $SLURM_ARRAY_TASK_ID. 
+Slurm script to use structure to infer population structure from SNP data using pre-installed module on cluster.  Runs as an array job for interval 1- max K.  Dependent on mainparams and extraparams files included with structure console.  K value in mainparams will be overwritted by $SLURM_ARRAY_TASK_ID. 
 -----
 
 basic_struct.sh
@@ -69,12 +69,17 @@ Bash script that formats a Q matrix from structure for use in TASSEL.  Prompts u
 
 slurm_glm.sh
 
-Slurm script to run GWAS using GLM in TASSEL.  
+Slurm script to run GWAS using General Linear Model (GLM) in TASSEL.  
+-----
+
+slurm_mlm_sansq.sh
+
+Slurm script to run GWAS using MLM in TASSEL but excluding the Q matrix.  Useful for comparisons between Q + K and K models.  
 -----
 
 slurm_mlm.sh
 
-Slurm script to run GWAS using MLM in TASSEL. 
+Slurm script to run GWAS using Mixed Linear Model (MLM) in TASSEL. 
 -----
 
 sort_hapmap_chr_pos.sh
@@ -89,10 +94,10 @@ Python 3 script written to extract SNP data by chromosome to separate files for 
 
 tassel_load_results.sh
 
-Bash script to import table results into TASSEL. 
+Bash script to import table results into TASSEL.  Useful for graphing results of previous analyzes.   
 -----
 
 tassel.sh
 
-Bash script to run a GWAS using GLM in TASSEL pipeline using the tutorial data.  
+Bash script to run a GWAS using GLM in TASSEL pipeline using the tutorial data.    
 -----
