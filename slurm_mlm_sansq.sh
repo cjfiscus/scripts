@@ -16,7 +16,8 @@ set -u
 # SNPs in Hapmap file must be in order
 # Runs on bigmem
 
-module load tassel/4.3.0
+module load jdk
+module load tassel/5
 
 run_pipeline.pl -Xmx16g -fork1 -k kinship.txt -fork2 -importGuess phenotype.txt -fork3 -h SNP_all_lines.hmp.txt -combine4 -input3 -input2 -intersect -combine5 -input4 -input1 -mlm -export mlm_output_noq -runfork1 -runfork2 -runfork3 -runfork4
 

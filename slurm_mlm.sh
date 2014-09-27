@@ -17,7 +17,8 @@ set -u
 # Must also include phenotype (.txt) and q matrix (.txt)
 # Runs on bigmem
 
-module load tassel/4.3.0
+module load jdk
+module load tassel/5
 
 run_pipeline.pl -Xmx16g -fork1 -k kinship.txt -fork2 -importGuess phenotype.txt -fork3 -q qmatrix_12.txt -fork4 -h SNP_all_lines.hmp.txt -combine5 -input4 -input2 -input3 -intersect -combine6 -input5 -input1 -mlm -export mlm_output_12 -runfork1 -runfork2 -runfork3 -runfork4
 
