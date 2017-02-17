@@ -81,7 +81,7 @@ def orthoid():
 	for Line in InFile:
 		Line = Line.lower()       				# remove case 
 		Line = Line.split('\t')   				# split by tab
-		Search.append(Line[0])    				# add gene name to list, name must be in position [0]
+		Search.append(Line[0].strip('\n'))    				# add gene name to list, name must be in position [0]
 	
 	InFile.close
 
