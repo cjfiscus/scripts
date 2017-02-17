@@ -2,7 +2,7 @@
 # By Chris Fiscus 
 # 2017-02-16
 #
-InFile=open("RpkmExonsBygenes_Big_exp_R1_test_ID_clust.txt", 'r') # File containing gene list to search
+InFile=open("expressiondata.txt", 'r') # File containing gene list to search
 
 Db=open("orthos2.txt", 'r')  # Database file with conversions
 
