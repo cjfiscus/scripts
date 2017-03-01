@@ -65,7 +65,8 @@ for Line in InFile:
 		OutFile.write(Line)					
 		
 	else:									# no short gene name for these 
-		Line = "\t".join(Line)				# join line indices with tab
+		Line = "\t".join(Line)						# format and write to outfile
+		Line= Line.upper()		
 		OutFile.write(Line)	
 		
 InFile.close()
