@@ -9,6 +9,9 @@ python3 script that exports lines of data containing IDs from another list.
 find_orthos.py
 python3 script that takes a list of genes, finds the ClusterID in Phytozome db, then writes a file containing the genes that match the ClusterIDs for a second species. 
 —
+gene_names.py
+python3 script that adds the short name to a list of genes using a second file that contains both the long and short names. 
+-
 ortho.py
 Python 3 pipeline to take a list of A. thaliana genes, removes duplicates, finds orthologs in Oryza from Phytozome db, adds MSU IDs (given RAP ID), and then exports the final list of genes from another data file (expression data, etc.). Conglomeration of convertRAP.py, export_exp.py, find_orthos.py, and process.py. 
 -
