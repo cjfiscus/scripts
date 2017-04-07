@@ -12,6 +12,9 @@ python3 script that takes a list of genes, finds the ClusterID in Phytozome db, 
 gene_names.py
 python3 script that adds the short name to a list of genes using a second file that contains both the long and short names. 
 -
+kmeranalysis.py
+Python 3 script that compares the K-mer counts from two jellyfish dump files and computes statistics on these counts. 
+-
 ortho.py
 Python 3 pipeline to take a list of A. thaliana genes, removes duplicates, finds orthologs in Oryza from Phytozome db, adds MSU IDs (given RAP ID), and then exports the final list of genes from another data file (expression data, etc.). Conglomeration of convertRAP.py, export_exp.py, find_orthos.py, and process.py. 
 -
