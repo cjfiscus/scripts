@@ -9,8 +9,8 @@
 # GCGAGGTTACCATTTCT	1	1
 
 # Files to compare, change this
-InFile1=open("Morex_test.txt", "r")		# File 1 (WGS data)
-InFile2=open("Morex_test1.txt","r")		# File 2 (RAD-Seq data)
+InFile1=open("Morex_ref_10.fa", "r")		# File 1 (WGS data)
+InFile2=open("RAD10_2.txt","r")		# File 2 (RAD-Seq data)
 
 # Outfiles 
 OutFile1=open("kmercompare.txt","w")		# same as InFile1 in uniqueKs(), need to assign this to a variable 
@@ -34,13 +34,15 @@ def kmercompare():
 					
 		else:
 			pass
-		
+	# Processing File 2
 	for Line1 in InFile2:
 		if Line1.startswith(">"):
-		
+#			print(Line1)		# debugging
 			# count 
 			count2 = Line1.strip('>')	# parsing
-			count2 = count.strip('\n')
+#			print(count2)		# debugging
+#			count2 = count.strip('\n')	# this was changing all counts to 495 for some reason, not sure why 
+#			print(count2)		# debugging 
 		
 			# kmer
 			kmer2 = next(InFile2)	# get next line (Kmer)
@@ -64,11 +66,13 @@ def kmercompare():
 		# kmers that exist in first file but not second file 
 		if kmers[key].count('\t') == 0:		# tabs haven't been added yet. 
 			amend = kmers.get(key)			# lookup in dictionary
-			amend = str(amend + '\t0')		# add 0
+			amend = str(amend + '\t0\n')		# add 0
 			kmers.update({key:amend})		# amend value in dict. 
 	
 		# Write dictionary to outfile with proper formatting		
-		OutFile1.write(str(key) + '\t' + kmers[key] + '\n')
+		OutFile1.write(str(key) + '\t' + kmers[key])
+		
+#	print(str(kmers.get('AAAAAAAAAA')))			# debug
 	
 
 
@@ -134,7 +138,7 @@ def uniqueKs():
 	OutFile2.close()
 	OutFile3.close()
 	
-	print(str(LineNo) + " K-mers, " + str(zeros) + " unique, " + str(errors) + " errors")
+	print(str(LineNo-1) + " K-mers, " + str(zeros) + " unique, " + str(errors) + " errors")
 	
 	print()		# print empty line
 		
