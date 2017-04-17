@@ -9,15 +9,17 @@
 # GCGAGGTTACCATTTCT	1	1
 
 # Files to compare, change this
-InFile1=open("Morex_ref_10.fa", "r")		# File 1 (WGS data)
-InFile2=open("RAD10_2.txt","r")		# File 2 (RAD-Seq data)
+InFile1=open("Morex_sr10.fa", "r")		# File 1 (WGS data)
+InFile2=open("Morex_ref_10.fa","r")		# File 2 (RAD-Seq data)
 
 # Outfiles 
-OutFile1=open("kmercompare.txt","w")		# same as InFile1 in uniqueKs(), need to assign this to a variable 
+OutFileName="kmercompare.txt"		# same as InFile1 in uniqueKs(), need to assign this to a variable 
 
 def kmercompare():
 	# Dictionary {Kmer:Count1\tCount2}
 	kmers = {}
+	
+	OutFile1=open(OutFileName,"w")
 
 	# Processing File 1 
 	for Line in InFile1:
@@ -82,7 +84,7 @@ def kmercompare():
 	
 
 def uniqueKs():
-	InFile1=open("kmercompare.txt","r")		# same as outfile1, change 
+	InFile1=open(OutFileName, "r")	# same as outfile1, change 
 	OutFile2=open("uniquekmers.txt","w")	# all unique K-mers (count = 1)
 	OutFile3=open("filtered.txt", "w")		# unique K-mers (count = 1 in File 1 only)
 	
@@ -138,13 +140,13 @@ def uniqueKs():
 	OutFile2.close()
 	OutFile3.close()
 	
-	print(str(LineNo-1) + " K-mers, " + str(zeros) + " unique, " + str(errors) + " errors")
+	print(str(LineNo-1) + " K-mers, " + str(zeros) + " unique, ")
 	
 	print()		# print empty line
 		
 	count_unique = (zeros/LineNo)*100		# calculate % of unique K-mers 
 	
-	print(str(count_unique)+ "% of K-mers are unique (total count = 1 between both files).")
+	print(str(count_unique)+ "% of K-mers are unique (only found in one file).")
 	
 	print()
 	
