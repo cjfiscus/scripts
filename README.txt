@@ -33,3 +33,5 @@ This README file.
 str_finder.py 
 python3 script to extract lines from a file that contain one of three strings and write them to another file. 
 —
+transpose.py
+Python 3 script Python 3 script that tranposes tab-delimited data contained in an input file and writes to an output file.
