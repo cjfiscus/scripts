@@ -1,10 +1,10 @@
 scripts/
 —————
 export_exp.py
-python3 script that exports lines of data containing IDs from another list. 
+python 3 script that exports lines of data containing IDs from another list. 
 —
 find_orthos.py
-python3 script that takes a list of genes, finds the ClusterID in Phytozome db, then writes a file containing the genes that match the ClusterIDs for a second species. 
+python 3 script that takes a list of genes, finds the ClusterID in Phytozome db, then writes a file containing the genes that match the ClusterIDs for a second species. 
 —
 gene_names.py
 python3 script that adds the short name to a list of genes using a second file that contains both the long and short names. 
@@ -12,11 +12,14 @@ python3 script that adds the short name to a list of genes using a second file t
 histo.py
 Python 3 script that produces histogram from K-mer counts (use after kmeranalysis.py).
 -
+kcount_reform.py
+Python 3 script to reformat Jellyfish K-mer count dumps. Derived from kmeranalysis.py. 
+-
 kmeranalysis.py
 Python 3 script that compares the K-mer counts from two jellyfish dump files and computes statistics on these counts. 
 -
 kmeroutput.py
-Python3 script that parses the "best K" from Kmergenie html output files and writes them to an output file.  This script also calculates mean, median and mode of best K and writes to stout.
+Python 3 script that parses the "best K" from Kmergenie html output files and writes them to an output file.  This script also calculates mean, median and mode of best K and writes to stout.
 -
 ortho.py
 Python 3 pipeline to take a list of A. thaliana genes, removes duplicates, finds orthologs in Oryza from Phytozome db, adds MSU IDs (given RAP ID), and then exports the final list of genes from another data file (expression data, etc.). Conglomeration of convertRAP.py, export_exp.py, find_orthos.py, and process.py. 
@@ -25,7 +28,7 @@ Phytozome_ortho_export.py
 Python 3 script that accepts a list of genes, finds the clusterIDs associated with those genes in Phytozome, and then exports a list of orthologs (identified by ClusterID) from a particular species.   
 —
 process.py
-python3 junk script to pull data from one data table to another. 
+python 3 junk script to pull data from one data table to another. 
 —
 README.txt
 This README file.  
