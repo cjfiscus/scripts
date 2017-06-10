@@ -1,5 +1,8 @@
 scripts/
 —————
+auto.R
+Example R script that takes arguments from command line as input and produces plots programmatically. Run with graph_auto.sh.  
+
 export_exp.py
 python 3 script that exports lines of data containing IDs from another list. 
 —
@@ -8,6 +11,9 @@ python 3 script that takes a list of genes, finds the ClusterID in Phytozome db,
 —
 gene_names.py
 python3 script that adds the short name to a list of genes using a second file that contains both the long and short names. 
+-
+graph_auto.sh
+See auto.R. 
 -
 histo.py
 Python 3 script that produces histogram from K-mer counts (use after kmeranalysis.py).
