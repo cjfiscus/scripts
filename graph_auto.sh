@@ -7,8 +7,9 @@
 #SBATCH --error=g%j.stderr
 #SBATCH --mail-user=cfisc004@ucr.edu
 #SBATCH --mail-type=ALL
+#SBATCH --time=1:00:00
 #SBATCH --job-name="g"
-#SBATCH -p intel
+#SBATCH -p short
 
 
 for f in ./*.txt 
