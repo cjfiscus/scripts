@@ -15,6 +15,9 @@ python3 script that adds the short name to a list of genes using a second file t
 graph_auto.sh
 See auto.R. 
 -
+file_split.py
+Python 3 script that splits large files into smaller files containing no more than 1,000,000 lines each. 
+- 
 histo.py
 Python 3 script that produces histogram from K-mer counts (use after kmeranalysis.py).
 -
