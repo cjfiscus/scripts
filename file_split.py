@@ -6,7 +6,7 @@
 ## This script splits large text files into files containing a given number of lines each. Remainder goes into last file 
 ## 
 ## Run this script as follows:
-## $ python3 file_splitter.py FILE.txt LineNum
+## $ python3 file_split.py FILE.txt LineNum
 
 import sys # required to use sys.args
 import os
