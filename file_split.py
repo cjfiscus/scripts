@@ -1,17 +1,20 @@
 ## File Splitter
 ## by Chris Fiscus
 ## 2017-06-20
+## revised 2017-07-03
 ##
-## This script splits large text files into files containing 1,000,000 lines each.
+## This script splits large text files into files containing a given number of lines each. Remainder goes into last file 
 ## 
 ## Run this script as follows:
-## $ python3 file_splitter.py FILE.txt
+## $ python3 file_splitter.py FILE.txt LineNum
 
 import sys # required to use sys.args
 import os
 
 ## Input file
 FiletoOpen=sys.argv[1] # filename provided in sys arg
+
+LineNum=sys.argv[2]
 
 File=open(FiletoOpen, "r") # open file to read
 
@@ -23,13 +26,13 @@ for Line in File:
 
 File.close() # not doing this messes up for loop later
 
-NumFiles= int(LineNo/1000000) + (LineNo % 1000000 > 0)
+NumFiles= int(LineNo/LineNum) + (LineNo % LineNum > 0)
 
 coords = [] # empty list for coordinates for file splitting
 
 ## Determine how many files to create
 for i in range(0,NumFiles):
-    coords.append(1000000*i)
+    coords.append(LineNum*i)
 
 ## Initialize variables
 LinesWritten=1
