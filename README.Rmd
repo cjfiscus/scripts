@@ -39,6 +39,9 @@ Python 3 script that accepts a list of genes, finds the clusterIDs associated wi
 ### process.py
 python 3 junk script to pull data from one data table to another.
 
+### reformat.py
+Python 3 script to reformat tab-delimited files that have multiple values in second column separated by columns. 
+
 ### str_finder.py
 python3 script to extract lines from a file that contain one of three strings and write them to another file.
 
